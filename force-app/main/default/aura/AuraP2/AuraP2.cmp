@@ -1,0 +1,8 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:attribute name="m1" type="string"/>
+    <hr/>
+    <aura:handler event="c:ApplicationEvent" action="{!c.fireAppEvent}" />
+    <h1> inside AuraP2 page</h1>
+    m1 Value : {!v.m1}
+</aura:component>

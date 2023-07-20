@@ -1,0 +1,11 @@
+<aura:component implements="flexipage:availableForRecordHome,force:hasRecordId">
+   <!-- <aura:handler event="force:showToast" action="{!c.Save1}"/> -->
+    <lightning:recordEditForm recordId="" objectApiName="Contact" onsuccess="{!c.Save1}">
+        <lightning:messages />
+        <lightning:inputField fieldName="AccountId" value="{!v.recordId}"/>
+        <lightning:inputField fieldName="FirstName" />
+        <lightning:inputField fieldName="LastName" />
+        <lightning:inputField fieldName="Email" />
+        <lightning:button class="slds-m-top_small" variant="brand" type="submit" name="create" label="Create"/>
+    </lightning:recordEditForm>
+</aura:component>

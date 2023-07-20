@@ -1,0 +1,22 @@
+<aura:component
+    implements="flexipage:availableForRecordHome,force:hasRecordId">
+        
+    <lightning:recordViewForm recordId="{!v.recordId}" objectApiName="Account">
+        <!-- Name field on account -->
+        <lightning:outputField fieldName="Name"/>
+
+        <!-- Nickname__c field on account -->
+        <lightning:outputField fieldName="Nickname__c"/>
+        
+        <!-- MobilePhone field on contact -->
+        <lightning:outputField fieldName="PersonMobilePhone"/>
+    
+        <!-- Contact_Nickname__c field on contact -->
+        <lightning:outputField fieldName="Contact_Nickname__pc" />
+        <lightning:button
+            class="slds-m-top_small"
+            variant="brand"
+            type="submit"
+            label="Update" />
+    </lightning:recordViewForm>
+</aura:component>

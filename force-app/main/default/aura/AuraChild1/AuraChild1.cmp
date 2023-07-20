@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:registerEvent name="empEvent" type="c:ComponentEvent" />
+    <aura:attribute name="messageString" type="string"/>
+	<h1>Child Component</h1>
+    Msg : {!v.messageString}
+    <lightning:input type="string" name="name11" value="{!v.messageString}"/>
+    <lightning:button label="Click1" onclick="{!c.change1}"/>
+</aura:component>

@@ -1,0 +1,31 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+                controller="GetContacts" access="global" >
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:attribute name="errors" type="Object" default="[]"/>
+    <aura:attribute name="draftValues" type="Object" default="[]"/>
+
+<aura:handler name="init" value="{! this }" action="{! c.init }"/>    
+    
+    <div style="height: 300px">
+        <lightning:datatable
+            columns="{! v.columns }"
+            data="{! v.data }"
+            keyField="id"
+            errors="{! v.errors }"
+        />
+    </div><table border="1">
+    	 <aura:iteration items="{! v.data }" var="item">
+            <tr><td>{!item.Name}</td><td>{!item.Email}</td><td>{!item.Account.Name}</td>
+             <td>
+        <lightning:input
+            aura:id="enter-search"
+            name="enter-search"
+            type="search" value="{!item.Account.Name}"
+        />                
+                </td>
+             </tr> 
+    </aura:iteration>
+    </table>
+    
+</aura:component>

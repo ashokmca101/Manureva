@@ -1,0 +1,9 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" 
+                access="global" >
+    <aura:handler name="empEvent" event="c:ComponentEvent" action="{!c.testfun}"/>
+    <aura:attribute name="pName" type="string"/>    
+    <h1>Parent Component</h1>
+	Parent Name : {!v.pName}
+    <hr/>
+        <c:AuraChild1/>
+</aura:component>

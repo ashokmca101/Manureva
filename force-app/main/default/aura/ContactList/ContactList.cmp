@@ -1,0 +1,32 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" 
+                access="global" 
+                   controller="GetContacts"
+                >
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="st" type="String"/>
+    <aura:attribute name="columns" type="List"/>
+    <aura:handler name="init" value="{!this}" action="{!c.handleLoad}"/>
+    
+    <lightning:card>
+     <aura:set attribute="title">
+        <lightning:layout multipleRows="true">
+           <lightning:layoutItem size="12">
+               <lightning:input label="Enter Search Text" value="{!v.st}"/>
+            </lightning:layoutItem>
+           <lightning:layoutItem size="12">
+               <lightning:button label="Search" onclick="{!c.handleSearch}"/>
+            </lightning:layoutItem>            
+         </lightning:layout>
+     </aura:set>    
+     
+        <lightning:datatable keyField="Id" data="{!v.data}" columns="{!v.columns}" hideCheckboxColumn="true">
+        
+        </lightning:datatable>
+                <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+    </lightning:card>
+    
+</aura:component>
